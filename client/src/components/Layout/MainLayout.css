@@ -1,0 +1,48 @@
+.layout-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+}
+
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  min-width: 0; /* Important for flex child sizing */
+  transition: var(--transition);
+}
+
+.content-body {
+  padding: 2.5rem;
+}
+
+.container-fluid {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+}
+
+@media (max-width: 1000px) {
+  .main-content {
+    margin-left: 0;
+  }
+
+  .sidebar-overlay {
+    display: block;
+  }
+
+  /* We'll handle Sidebar transition in Sidebar.css via 'isOpen' prop for mobile */
+}
+
+@media (max-width: 600px) {
+  .content-body {
+    padding: 1.5rem;
+  }
+}
