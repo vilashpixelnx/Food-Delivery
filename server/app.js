@@ -48,8 +48,8 @@ app.use('/api/expenses', require('./routes/expenses'));
 // Phase 7: Payment System
 app.use('/api/payments', require('./routes/payments'));
 
-// TODO (future phases):
-// app.use('/api/reports',   require('./routes/reports'));
+// Phase 8: Reports & Analytics
+app.use('/api/reports', require('./routes/reports'));
 
 // ─── Error Handlers ──────────────────────────────────────────
 app.use(notFound);
