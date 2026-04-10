@@ -1,8 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from './components/Layout/MainLayout';
 import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
+import Orders from './pages/Orders';
+import Customers from './pages/Customers';
+import Carts from './pages/Carts';
+import ProtectedRoute from './components/Auth/ProtectedRoute';
 
-// Placeholder Pages for future phases
+// Placeholder Pages for remaining modules
 const Placeholder = ({ title }) => (
   <div className="card">
     <h2>{title}</h2>
@@ -14,20 +19,40 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Main Application Routes */}
-        <Route path="/" element={<MainLayout />}>
+        {/* Auth Route */}
+        <Route path="/login" element={<Login />} />
+
+        {/* Protected Application Routes */}
+        <Route 
+          path="/" 
+          element={
+            <ProtectedRoute>
+              <MainLayout />
+            </ProtectedRoute>
+          }
+        >
           <Route index element={<Dashboard />} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="customers" element={<Customers />} />
+          <Route path="carts" element={<Carts />} />
+          
           <Route path="billing" element={<Placeholder title="POS / Billing System" />} />
-          <Route path="orders" element={<Placeholder title="Order Management" />} />
           <Route path="stock" element={<Placeholder title="Stock & Inventory" />} />
-          <Route path="customers" element={<Placeholder title="Customer Database" />} />
-          <Route path="carts" element={<Placeholder title="Cart Management" />} />
           <Route path="expenses" element={<Placeholder title="Expense Tracking" />} />
-          <Route path="reports" element={<Placeholder title="Analytics & Reports" />} />
+          
+          {/* Admin Only Routes */}
+          <Route 
+            path="reports" 
+            element={
+              <ProtectedRoute roles={['admin']}>
+                <Placeholder title="Analytics & Reports" />
+              </ProtectedRoute>
+            } 
+          />
         </Route>
 
-        {/* Auth routes (Phase 10) */}
-        <Route path="/login" element={<div>Login Page (Coming Soon)</div>} />
+        {/* 404 Catch All */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );
