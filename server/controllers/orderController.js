@@ -1,6 +1,7 @@
 const Order = require('../models/Order');
 const Customer = require('../models/Customer');
 const Stock = require('../models/Stock');
+const { sendWhatsAppBill } = require('../services/whatsappService');
 
 // Helper to generate bill number: PP-YYYYMMDD-XXXX
 const generateBillNumber = async () => {
@@ -112,6 +113,18 @@ exports.createOrder = async (req, res, next) => {
         { upsert: true } // If stock entry doesn't exist, it creates one (though ideally should exist)
       );
     }
+
+    // 6. Send WhatsApp Notification (Async)
+    const orderWithCustomer = await order.populate('customer', 'name phone');
+    const itemsSummary = items.map(i => `${i.name} x${i.quantity}`).join(', ');
+    
+    sendWhatsAppBill(orderWithCustomer.customer.phone, {
+      customerName: orderWithCustomer.customer.name,
+      billNumber: order.billNumber,
+      amount: order.totalAmount,
+      itemsSummary: itemsSummary,
+      billLink: `${req.protocol}://${req.get('host')}/api/bills/${order._id}/pdf`
+    });
 
     res.status(201).json({ success: true, data: order });
   } catch (error) {
