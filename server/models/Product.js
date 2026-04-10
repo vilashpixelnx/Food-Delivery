@@ -26,6 +26,14 @@ const productSchema = new mongoose.Schema(
       type: String,
       default: 'Plate', // e.g., Plate, Glass, Piece
     },
+    taxPercent: {
+      type: Number,
+      default: 0,
+    },
+    discountPercent: {
+      type: Number,
+      default: 0,
+    },
     image: {
       type: String,
     },

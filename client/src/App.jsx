@@ -10,6 +10,10 @@ import Billing from './pages/Billing';
 import Expenses from './pages/Expenses';
 import Payments from './pages/Payments';
 import Reports from './pages/Reports';
+import Products from './pages/Products';
+import Categories from './pages/Categories';
+import Units from './pages/Units';
+import Settings from './pages/Settings';
 import ProtectedRoute from './components/Auth/ProtectedRoute';
 
 // Placeholder Pages for remaining modules
@@ -44,6 +48,7 @@ function App() {
           <Route path="billing" element={<Billing />} />
           <Route path="expenses" element={<Expenses />} />
           <Route path="payments" element={<Payments />} />
+          <Route path="products" element={<Products />} />
           
           {/* Admin Only Routes */}
           <Route 
@@ -51,6 +56,30 @@ function App() {
             element={
               <ProtectedRoute roles={['admin']}>
                 <Reports />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="categories" 
+            element={
+              <ProtectedRoute roles={['admin']}>
+                <Categories />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="units" 
+            element={
+              <ProtectedRoute roles={['admin']}>
+                <Units />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="settings" 
+            element={
+              <ProtectedRoute roles={['admin']}>
+                <Settings />
               </ProtectedRoute>
             } 
           />

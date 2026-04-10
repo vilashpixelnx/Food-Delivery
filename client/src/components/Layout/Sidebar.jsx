@@ -10,7 +10,10 @@ import {
   LogOut,
   Store,
   Wallet,
-  CreditCard
+  CreditCard,
+  Settings as SettingsIcon,
+  Tag,
+  Layers
 } from 'lucide-react';
 import './Sidebar.css';
 
@@ -21,10 +24,14 @@ const Sidebar = () => {
     { name: 'Orders', icon: <ShoppingCart size={20} />, path: '/orders' },
     { name: 'Stock', icon: <Package size={20} />, path: '/stock' },
     { name: 'Carts', icon: <Store size={20} />, path: '/carts' },
+    { name: 'Products', icon: <Package size={20} />, path: '/products' },
+    { name: 'Categories', icon: <Tag size={20} />, path: '/categories' },
+    { name: 'Units', icon: <Layers size={20} />, path: '/units' },
     { name: 'Customers', icon: <Users size={20} />, path: '/customers' },
     { name: 'Expenses', icon: <Wallet size={20} />, path: '/expenses' },
     { name: 'Payments', icon: <CreditCard size={20} />, path: '/payments' },
     { name: 'Reports', icon: <TrendingUp size={20} />, path: '/reports' },
+    { name: 'Settings', icon: <SettingsIcon size={20} />, path: '/settings' },
   ];
 
   return (

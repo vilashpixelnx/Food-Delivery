@@ -33,6 +33,7 @@ app.use('/api/auth', require('./routes/auth'));
 // Phase 3: Carts, Products, Customers
 app.use('/api/carts', require('./routes/carts'));
 app.use('/api/products', require('./routes/products'));
+app.use('/api/settings', require('./routes/settings'));
 app.use('/api/customers', require('./routes/customers'));
 
 // Phase 4: Orders & Stock

@@ -47,6 +47,7 @@ const Orders = () => {
                 <th>Cart</th>
                 <th>Customer</th>
                 <th>Amount</th>
+                <th>Discount</th>
                 <th>Status</th>
                 <th>Action</th>
               </tr>
@@ -72,6 +73,11 @@ const Orders = () => {
                   </td>
                   <td>
                     <span className="font-bold text-primary">₹{order.totalAmount}</span>
+                  </td>
+                  <td>
+                    <span className="text-secondary font-medium">
+                      {order.discount > 0 ? `-₹${order.discount}` : '₹0'}
+                    </span>
                   </td>
                   <td>
                     <span className={`badge-status ${order.paymentStatus === 'Completed' ? 'success' : 'warning'}`}>
