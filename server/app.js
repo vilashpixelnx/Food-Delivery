@@ -27,11 +27,15 @@ app.use(express.urlencoded({ extended: false }));
 // ─── Routes ───────────────────────────────────────────────────
 app.use('/api/health', require('./routes/health'));
 
+// Phase 2: Authentication
+app.use('/api/auth', require('./routes/auth'));
+
+// Phase 3: Carts, Products, Customers
+app.use('/api/carts', require('./routes/carts'));
+app.use('/api/products', require('./routes/products'));
+app.use('/api/customers', require('./routes/customers'));
+
 // TODO (future phases):
-// app.use('/api/auth',      require('./routes/auth'));
-// app.use('/api/carts',     require('./routes/carts'));
-// app.use('/api/products',  require('./routes/products'));
-// app.use('/api/customers', require('./routes/customers'));
 // app.use('/api/orders',    require('./routes/orders'));
 // app.use('/api/stock',     require('./routes/stock'));
 // app.use('/api/bills',     require('./routes/bills'));
