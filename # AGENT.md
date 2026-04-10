@@ -361,9 +361,9 @@ Fully functional Pani Puri Cart System
 | Phase 9 | React Frontend Setup + Dashboard UI | ✅ Completed |
 | Phase 10 | Frontend Auth + Protected Routes | ✅ Completed |
 | Phase 11 | Frontend: Orders + Customers + Carts Pages | ✅ Completed |
-| Phase 12 | Frontend: Stock Management Page | ⏳ Next to Build |
-| Phase 13 | Frontend: Billing Page + PDF Download | 🔲 Not Started |
-| Phase 14 | Frontend: Expense + Payment Pages | 🔲 Not Started |
+| Phase 12 | Frontend: Stock Management Page | ✅ Completed |
+| Phase 13 | Frontend: Billing Page + PDF Download | ✅ Completed |
+| Phase 14 | Frontend: Expense + Payment Pages | ⏳ Next to Build |
 | Phase 15 | Frontend: Analytics & Reports (Chart.js) | 🔲 Not Started |
 | Phase 16 | WhatsApp Integration | 🔲 Not Started |
 | Phase 17 | Thermal Printer Integration | 🔲 Not Started |

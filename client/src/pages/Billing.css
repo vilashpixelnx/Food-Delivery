@@ -1,0 +1,142 @@
+.billing-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.products-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem !important;
+}
+
+.product-info h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.product-info .price {
+  display: block;
+  font-weight: 800;
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.product-info .category {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.add-btn {
+  background: var(--glass);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.product-card:hover .add-btn {
+  background: var(--primary);
+  color: #000;
+}
+
+/* Cart Styles */
+.cart-section {
+  position: sticky;
+  top: 100px;
+  padding: 2rem !important;
+}
+
+.cart-items-list {
+  min-height: 200px;
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 1.5rem 0;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.item-price {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.item-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.item-controls button {
+  background: var(--glass);
+  border: none;
+  color: var(--text-main);
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-controls span {
+  font-weight: 700;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Success State */
+.checkout-success-container {
+  max-width: 600px;
+  margin: 4rem auto;
+  text-align: center;
+  padding: 4rem !important;
+}
+
+.success-icon {
+  margin-bottom: 2rem;
+  animation: scaleUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 1100px) {
+  .billing-grid {
+    grid-template-columns: 1fr;
+  }
+}
