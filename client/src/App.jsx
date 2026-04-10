@@ -9,6 +9,7 @@ import Stock from './pages/Stock';
 import Billing from './pages/Billing';
 import Expenses from './pages/Expenses';
 import Payments from './pages/Payments';
+import Reports from './pages/Reports';
 import ProtectedRoute from './components/Auth/ProtectedRoute';
 
 // Placeholder Pages for remaining modules
@@ -49,7 +50,7 @@ function App() {
             path="reports" 
             element={
               <ProtectedRoute roles={['admin']}>
-                <Placeholder title="Analytics & Reports" />
+                <Reports />
               </ProtectedRoute>
             } 
           />
