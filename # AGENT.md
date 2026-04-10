@@ -353,9 +353,9 @@ Fully functional Pani Puri Cart System
 | Phase 1 | Project Setup + Backend Foundation | ✅ Completed |
 | Phase 2 | Authentication (JWT) | ✅ Completed |
 | Phase 3 | Cart, Product, Customer APIs | ✅ Completed |
-| Phase 4 | Order + Stock APIs | ⏳ Next to Build |
-| Phase 5 | Billing System + PDF | 🔲 Not Started |
-| Phase 6 | Expense Tracking API | 🔲 Not Started |
+| Phase 4 | Order + Stock APIs | ✅ Completed |
+| Phase 5 | Billing System + PDF | ✅ Completed |
+| Phase 6 | Expense Tracking API | ⏳ Next to Build |
 | Phase 7 | Payment System (Razorpay) | 🔲 Not Started |
 | Phase 8 | Reports & Analytics API | 🔲 Not Started |
 | Phase 9 | React Frontend Setup + Dashboard UI | 🔲 Not Started |

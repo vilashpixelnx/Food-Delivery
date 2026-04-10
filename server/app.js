@@ -35,10 +35,14 @@ app.use('/api/carts', require('./routes/carts'));
 app.use('/api/products', require('./routes/products'));
 app.use('/api/customers', require('./routes/customers'));
 
+// Phase 4: Orders & Stock
+app.use('/api/orders', require('./routes/orders'));
+app.use('/api/stock', require('./routes/stock'));
+
+// Phase 5: Billing System
+app.use('/api/bills', require('./routes/bills'));
+
 // TODO (future phases):
-// app.use('/api/orders',    require('./routes/orders'));
-// app.use('/api/stock',     require('./routes/stock'));
-// app.use('/api/bills',     require('./routes/bills'));
 // app.use('/api/expenses',  require('./routes/expenses'));
 // app.use('/api/payments',  require('./routes/payments'));
 // app.use('/api/reports',   require('./routes/reports'));
