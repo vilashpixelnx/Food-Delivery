@@ -9,7 +9,8 @@ import {
   TrendingUp, 
   LogOut,
   Store,
-  Wallet
+  Wallet,
+  CreditCard
 } from 'lucide-react';
 import './Sidebar.css';
 
@@ -22,6 +23,7 @@ const Sidebar = () => {
     { name: 'Carts', icon: <Store size={20} />, path: '/carts' },
     { name: 'Customers', icon: <Users size={20} />, path: '/customers' },
     { name: 'Expenses', icon: <Wallet size={20} />, path: '/expenses' },
+    { name: 'Payments', icon: <CreditCard size={20} />, path: '/payments' },
     { name: 'Reports', icon: <TrendingUp size={20} />, path: '/reports' },
   ];
 

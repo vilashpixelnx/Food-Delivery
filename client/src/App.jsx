@@ -7,6 +7,8 @@ import Customers from './pages/Customers';
 import Carts from './pages/Carts';
 import Stock from './pages/Stock';
 import Billing from './pages/Billing';
+import Expenses from './pages/Expenses';
+import Payments from './pages/Payments';
 import ProtectedRoute from './components/Auth/ProtectedRoute';
 
 // Placeholder Pages for remaining modules
@@ -39,8 +41,8 @@ function App() {
           <Route path="carts" element={<Carts />} />
           <Route path="stock" element={<Stock />} />
           <Route path="billing" element={<Billing />} />
-          
-          <Route path="expenses" element={<Placeholder title="Expense Tracking" />} />
+          <Route path="expenses" element={<Expenses />} />
+          <Route path="payments" element={<Payments />} />
           
           {/* Admin Only Routes */}
           <Route 
