@@ -42,8 +42,10 @@ app.use('/api/stock', require('./routes/stock'));
 // Phase 5: Billing System
 app.use('/api/bills', require('./routes/bills'));
 
+// Phase 6: Expense Tracking
+app.use('/api/expenses', require('./routes/expenses'));
+
 // TODO (future phases):
-// app.use('/api/expenses',  require('./routes/expenses'));
 // app.use('/api/payments',  require('./routes/payments'));
 // app.use('/api/reports',   require('./routes/reports'));
 
