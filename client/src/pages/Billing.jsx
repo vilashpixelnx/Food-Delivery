@@ -14,8 +14,10 @@ import {
   CheckCircle,
   FileText,
   CreditCard,
-  Banknote
+  Banknote,
+  Printer
 } from 'lucide-react';
+import ThermalReceipt from '../components/Printing/ThermalReceipt';
 import './Billing.css';
 
 const Billing = () => {
@@ -147,11 +149,19 @@ const Billing = () => {
         <p>Bill Number: <strong>{checkoutSuccess.billNumber}</strong></p>
         <div className="flex gap-4 mt-2" style={{ marginTop: '2rem' }}>
           <button className="btn btn-primary" onClick={() => generateBillPDF(checkoutSuccess._id)}>
-            <FileText size={20} /> Download PDF Bill
+            <FileText size={20} /> PDF
+          </button>
+          <button className="btn btn-secondary" onClick={() => window.print()} style={{ backgroundColor: '#2EC4B6', color: '#000' }}>
+            <Printer size={20} /> Thermal Print
           </button>
           <button className="btn btn-outline" onClick={() => setCheckoutSuccess(null)}>
             New Order
           </button>
+        </div>
+
+        {/* Hidden Thermal Receipt for Printing */}
+        <div className="print-only">
+          <ThermalReceipt order={checkoutSuccess} />
         </div>
       </div>
     );

@@ -177,3 +177,27 @@ body {
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
 }
+
+/* ─────────────────────────────────────────────────────────────
+   PRINTING UTILITIES
+   ───────────────────────────────────────────────────────────── */
+
+.print-only {
+  display: none;
+}
+
+@media print {
+  .print-only {
+    display: block !important;
+  }
+  
+  .layout-wrapper, .topbar, .sidebar, .btn, .card:not(.receipt-container), .header-titles {
+    display: none !important;
+  }
+  
+  body, html {
+    background: white !important;
+    color: black !important;
+  }
+}
+

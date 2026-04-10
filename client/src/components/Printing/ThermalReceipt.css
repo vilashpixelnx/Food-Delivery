@@ -1,0 +1,117 @@
+.receipt-container {
+  width: 58mm; /* Standard narrow thermal size */
+  background: white;
+  color: black;
+  padding: 5mm;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10pt;
+  line-height: 1.2;
+  margin: 0 auto;
+}
+
+.receipt-header {
+  text-align: center;
+  margin-bottom: 3mm;
+}
+
+.receipt-header h1 {
+  font-size: 14pt;
+  margin: 0;
+  font-weight: 800;
+}
+
+.receipt-header p {
+  margin: 0;
+  font-size: 8pt;
+}
+
+.divider {
+  text-align: center;
+  margin: 2mm 0;
+  font-size: 8pt;
+}
+
+.receipt-info p {
+  margin: 0.5mm 0;
+  font-size: 9pt;
+}
+
+.receipt-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.receipt-table th {
+  border-bottom: 1px dashed black;
+  font-size: 9pt;
+  padding-bottom: 1mm;
+}
+
+.receipt-table td {
+  padding: 1mm 0;
+  font-size: 9pt;
+}
+
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+
+.receipt-summary {
+  margin-top: 2mm;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total {
+  font-weight: 800;
+  font-size: 11pt;
+  margin-top: 1mm;
+}
+
+.receipt-footer {
+  text-align: center;
+  font-size: 8pt;
+}
+
+.qr-placeholder {
+  margin-top: 2mm;
+  border: 1px solid black;
+  width: 30mm;
+  height: 30mm;
+  margin: 2mm auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hide from screen, only for printing */
+@media screen {
+  .receipt-container {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+  }
+}
+
+@media print {
+  @page {
+    margin: 0;
+    size: auto;
+  }
+  body * {
+    visibility: hidden;
+  }
+  .receipt-container, .receipt-container * {
+    visibility: visible;
+  }
+  .receipt-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  /* Remove headers/footers in browser print */
+  header, footer, nav, aside { display: none !important; }
+}

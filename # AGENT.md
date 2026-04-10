@@ -366,8 +366,8 @@ Fully functional Pani Puri Cart System
 | Phase 14 | Frontend: Expense + Payment Pages | ✅ Completed |
 | Phase 15 | Frontend: Analytics & Reports (Chart.js) | ✅ Completed |
 | Phase 16 | WhatsApp Integration | ✅ Completed |
-| Phase 17 | Thermal Printer Integration | ⏳ Next to Build |
-| Phase 18 | VPS Deployment | 🔲 Not Started |
+| Phase 17 | Thermal Printer Integration | ✅ Completed |
+| Phase 18 | VPS Deployment | ⏳ Next to Build |
 
 ---
 
