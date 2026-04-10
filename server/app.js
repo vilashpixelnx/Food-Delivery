@@ -45,8 +45,10 @@ app.use('/api/bills', require('./routes/bills'));
 // Phase 6: Expense Tracking
 app.use('/api/expenses', require('./routes/expenses'));
 
+// Phase 7: Payment System
+app.use('/api/payments', require('./routes/payments'));
+
 // TODO (future phases):
-// app.use('/api/payments',  require('./routes/payments'));
 // app.use('/api/reports',   require('./routes/reports'));
 
 // ─── Error Handlers ──────────────────────────────────────────
